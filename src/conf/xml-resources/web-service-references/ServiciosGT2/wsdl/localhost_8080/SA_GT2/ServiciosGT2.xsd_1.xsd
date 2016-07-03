@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://Servicios/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://Servicios/">
+
+<xs:element name="GenerarFactura" type="tns:GenerarFactura"/>
+
+<xs:element name="GenerarFacturaResponse" type="tns:GenerarFacturaResponse"/>
+
+<xs:element name="PagarImpuestos" type="tns:PagarImpuestos"/>
+
+<xs:element name="PagarImpuestosResponse" type="tns:PagarImpuestosResponse"/>
+
+<xs:element name="PagarPaquete" type="tns:PagarPaquete"/>
+
+<xs:element name="PagarPaqueteResponse" type="tns:PagarPaqueteResponse"/>
+
+<xs:element name="RecibirFormulario" type="tns:RecibirFormulario"/>
+
+<xs:element name="RecibirFormularioResponse" type="tns:RecibirFormularioResponse"/>
+
+<xs:complexType name="PagarImpuestos">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="PagarImpuestosResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RecibirFormulario">
+<xs:sequence>
+<xs:element name="transaccion" type="tns:transaccionGT" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="transaccionGT">
+<xs:sequence>
+<xs:element name="Categoria" type="xs:int"/>
+<xs:element name="PorcentajeArancelario" type="xs:double"/>
+<xs:element name="DetalleItem" type="tns:item" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="NumeroFormulario" type="xs:int"/>
+<xs:element name="Monto" type="xs:double"/>
+<xs:element name="NumeroCuentaAcreditar" type="xs:int"/>
+<xs:element name="NumeroCuentaDebitar" type="xs:int"/>
+<xs:element name="Estado" type="xs:int"/>
+<xs:element name="NumeroTarjetaDebitar" type="xs:int"/>
+<xs:element name="TipoPago" type="xs:int"/>
+<xs:element name="HTMLPDF" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="item">
+<xs:sequence>
+<xs:element name="NumeroTracking" type="xs:int"/>
+<xs:element name="Cantidad" type="xs:int"/>
+<xs:element name="Categoria" type="xs:int"/>
+<xs:element name="Peso" type="xs:double"/>
+<xs:element name="Precio" type="xs:double"/>
+<xs:element name="Descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="PorcentajeArancel" type="xs:int"/>
+<xs:element name="Proceso" type="xs:int"/>
+<xs:element name="Ubicacion" type="xs:string" minOccurs="0"/>
+<xs:element name="Usuario" type="xs:int"/>
+<xs:element name="Producto" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RecibirFormularioResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GenerarFactura">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="GenerarFacturaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="PagarPaquete">
+<xs:sequence>
+<xs:element name="cuenta" type="xs:int"/>
+<xs:element name="tarjeta" type="xs:int"/>
+<xs:element name="tipo" type="xs:int"/>
+<xs:element name="monto" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="PagarPaqueteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

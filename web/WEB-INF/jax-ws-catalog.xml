@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://192.168.1.4:8080/proyectoSA/arancel?wsdl" uri="wsdl/192.168.1.4_8080/proyectoSA/arancel.wsdl"/>
+    <system systemId="http://192.168.1.4:8080/proyectoSA/arancel?xsd=1" uri="wsdl/192.168.1.4_8080/proyectoSA/arancel.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/SA_GT2/ServiciosGT2?wsdl" uri="wsdl/localhost_8080/SA_GT2/ServiciosGT2.wsdl"/>
+    <system systemId="http://localhost:8080/SA_GT2/ServiciosGT2?xsd=1" uri="wsdl/localhost_8080/SA_GT2/ServiciosGT2.xsd_1.xsd"/>
+</catalog>

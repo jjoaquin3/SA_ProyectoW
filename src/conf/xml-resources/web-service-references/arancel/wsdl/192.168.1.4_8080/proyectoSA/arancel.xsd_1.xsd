@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://aranceles/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://aranceles/">
+
+<xs:element name="actualizarFormulario" type="tns:actualizarFormulario"/>
+
+<xs:element name="actualizarFormularioResponse" type="tns:actualizarFormularioResponse"/>
+
+<xs:element name="calculoMonto" type="tns:calculoMonto"/>
+
+<xs:element name="calculoMontoResponse" type="tns:calculoMontoResponse"/>
+
+<xs:element name="obtenerArancel" type="tns:obtenerArancel"/>
+
+<xs:element name="obtenerArancelResponse" type="tns:obtenerArancelResponse"/>
+
+<xs:element name="obtenerMontoFormulario" type="tns:obtenerMontoFormulario"/>
+
+<xs:element name="obtenerMontoFormularioResponse" type="tns:obtenerMontoFormularioResponse"/>
+
+<xs:element name="validarManifiesto" type="tns:validarManifiesto"/>
+
+<xs:element name="validarManifiestoResponse" type="tns:validarManifiestoResponse"/>
+
+<xs:complexType name="obtenerMontoFormulario">
+<xs:sequence>
+<xs:element name="idFormulario" type="tns:master" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="master">
+<xs:sequence>
+<xs:element name="Categoria" type="xs:int"/>
+<xs:element name="PorcentajeArancelario" type="xs:int"/>
+<xs:element name="DetalleItem" type="tns:element" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="NumeroFormulario" type="xs:int"/>
+<xs:element name="Monto" type="xs:double"/>
+<xs:element name="NumeroCuentaAcreditar" type="xs:int"/>
+<xs:element name="NumeroCuentaDebitar" type="xs:int"/>
+<xs:element name="Estado" type="xs:int"/>
+<xs:element name="NumeroTarjetaDebitar" type="xs:int"/>
+<xs:element name="TipoPago" type="xs:int"/>
+<xs:element name="transaccion" type="xs:string" minOccurs="0"/>
+<xs:element name="HTMLPDF" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="element">
+<xs:sequence>
+<xs:element name="NumeroTracking" type="xs:int"/>
+<xs:element name="Cantidad" type="xs:int"/>
+<xs:element name="Categoria" type="xs:int"/>
+<xs:element name="Peso" type="xs:double"/>
+<xs:element name="precio" type="xs:double"/>
+<xs:element name="Descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="PorcentajeArancel" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtenerMontoFormularioResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:master" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validarManifiesto">
+<xs:sequence>
+<xs:element name="Manifiesto" type="tns:master" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validarManifiestoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:master" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="calculoMonto">
+<xs:sequence>
+<xs:element name="arg0" type="tns:master" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="calculoMontoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarFormulario">
+<xs:sequence>
+<xs:element name="idFormularioTransaccion" type="tns:master" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarFormularioResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtenerArancel">
+<xs:sequence>
+<xs:element name="categoria" type="tns:master" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtenerArancelResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:master" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
