@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://192.168.1.4:8080/proyectoSA/arancel?wsdl" uri="src/conf/xml-resources/web-service-references/arancel/wsdl/192.168.1.4_8080/proyectoSA/arancel.wsdl"/>
+    <system systemId="http://192.168.1.4:8080/proyectoSA/arancel?xsd=1" uri="src/conf/xml-resources/web-service-references/arancel/wsdl/192.168.1.4_8080/proyectoSA/arancel.xsd_1.xsd"/>
+</catalog>
